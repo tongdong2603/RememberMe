@@ -1,0 +1,17 @@
+ngModel, ngFor, ngIf, () = "",
+localReferent: #nameValue
+@input truy?n d? li?u vào trong component con
+@output truy?n d? li?t  ra cho component cha
+@viewChild("", {static: true}) truy van vao phan tu con
+ng-content d? tùy bi?n thành ph?n bên trong c?a component 
+licycle {
++ngOnchanges: Called after a bound input property changes
++ ngOnInit: Called once the component is initialized
++ ngDoCheck: Called during every change detection run
++ ngAfterContentInit: Called after content (ng-content) has been projected into view
++ ngAfterContentChecked: Called every time the projected content has been checked
++ ngAfterViewInit: Called after the component’s view (and child views) has been initialized
++ ngAfterViewChecked: Called every time the view (and child views) have been checked
++ ngOnDestroy: Called once the component is about to be destroyed
+}
+OnChanges không nên th?c hi?n cùng DoCheck
