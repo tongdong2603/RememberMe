@@ -1,9 +1,9 @@
 const axios = require('axios');
 const moment = require('moment-timezone');
 const garoonProfile = [{
-    id: "21",
-    code: "fabbi-dev-1",
-    token: "QWRtaW5pc3RyYXRvcjpOb3ZlbDA0MjE=" // Administrator:Novel0421
+    id: "2",
+    code: "tong dong",
+    token: "OTF0b25nZG9uZzI2MDNAZ21haWwuY29tOmZhYmJpMTIzCg==" // Administrator:Novel0421
 }]
 
 const event = {
@@ -17,7 +17,7 @@ const event = {
     },
     "attendees": [
         {
-            "id": "21",
+            "id": "2",
             "type": "USER",
         }
     ],
@@ -38,11 +38,11 @@ const event = {
     }
 }
 
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 1; i++) {
     setTimeout(() => {
         axios({
             method: "post",
-            url: 'https://xf64e.cybozu.com/g/api/v1/schedule/events',
+            url: 'https://test-dev-5.cybozu.com/g/api/v1/schedule/events',
             headers: {
                 'X-Cybozu-Authorization': `${garoonProfile[0].token}`,
                 "Content-Type": "application/json"
@@ -60,6 +60,10 @@ for (let i = 0; i < 100; i++) {
                 subject: event.subject + ' ' + i
             }
         })
+          .then(function (response) {
+              // handle success
+              console.log(i);
+          })
         .catch(err => {
             console.log('err : ', err);
         })

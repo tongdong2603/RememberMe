@@ -1,6 +1,6 @@
 const axios = require('axios');
 const moment = require('moment-timezone');
-const officeToken = 'EwB4A8l6BAAUO9chh8cJscQLmU+LSWpbnr0vmwwAAVHBUh+gYnNfmKbUGZ4O3Ayq2d6ejqHoDL9KGduEYLreF1vDJEqteGlrlrpsJ/F+B/LsYvBxdxKBRP3mAIDFtB3hjZ2h6Pdm9mBxbWhlpS1VLuWCsBlOglBsTzx89rsPAHkxJgke4T0orawXzBWVjQ6dKSc3mJCvzrulgifaX4SeFvBviIHaCIiOHMXblKh2cK7zGTzSAiavMgyX6RQIN67nHgCQEVPVYaKwmFZTzL8xLWVl3EDQzGkDoEXlANoRODBWIU6B8FQw/FucALQlPqjdnU0Oh5Vg1W5zPDN+uVWqKvDQYZPPpiBS52Ta0AJ40OC5c0OxYbPnbWJ05O0t8AgDZgAACGZZhAKVt3jdSAKdI8L30MSZoIXv3c+U7mJZwzGEXaNTcTDzg48Qt/dmXSgSQ9caAuJRVxJEtTQxHoCzfFfjfT7nx1JxVBNnLj2sPskoiv0HzWjIWeqN0JTo0aw7z7tFwebX5i5AzBKP7G98CnXIiNtuAtoOkiXgIfhehpAQn1SCdbm0ZzfnSfuMDzdoxXB59rCUhRxNsSesgDGtKzI9thXpNugzX+lSTQ9uuBiIQs3tkXJLt3gXAI7aR5H3LnD9FZy6PbxxBr8XGmjoppL6lNPlAsqTk69fc3p74xy+erizmqTiiuHvjSaEexblArgqS5JadyyfY/fyTb+Dem5aHDzPxFmw3WxlNmw6NVeBgou0uNVeG/XmxpQeeerOS/O2slMsAerWgry2+FlPAF332jAvvdu5HYbVQBkE8TaoUbUo+mxR7omQpAU+J3VxVGt5gQamR+HP2GzPzMWA86LkXYcvmcajJp+TlhbjHSphcAX8Om09qfQ864Gi+ZeSBdN8qfQ+2o5dNOh0nHYLp39zNcah1n0YbLQGK4hAqx4R3p8K5+L61WY7WLlcy/AXjSMmOViMDn8+tfU1hoVpQCIhDCLzoddKsyQURxJELTWMAyi09vSJkTXafpEXWmxVrNtrA+zPhsV5FwT2GVE5g8Vgx+TT0NTV4EUzirMbq4r4yK+FjTnubOe0eN9h480ZH6WPwv5/SfKK/PpK7mV081Wxv6EYZkLU5Ckl4agHU6rc46ndQNm4uxeRaNhSeJzMu8Yi65nTh7/M2b2bxu+TzFj/PbJu0H8C'
+const officeToken = 'EwCAA8l6BAAUO9chh8cJscQLmU+LSWpbnr0vmwwAAako6vEDZ4AGDLsf+qwJ2A/R3lRVgNaJw6CJ1fhNNExR1fjRSOITMStkmB4qEwnOpU5Cn27LWwXvjhQ0XM0Jbjta/40T1LT+dV7HnhpYCkMMKwE6MU0ETVIg1WcTYlgZ7jfabGNI0MJ/Uhgypntp0Q22wRp7t2P4pqDs6qkjm6u9p/8vN1vWW8UuXW6pEbVWCSKUsXdfX+El+1KG+AZnncCv5JDnFdJSwjkmVNMgfCvS0yEuKz0S/njOTYwJYoWfYwO2oQ2YSVHTJUGUAghaNVtizwQ5S8B8ixRRMubkh/hpkUWRNzy61wfH/vOMvC9wZkX8nKLBG/HGCEk2n8zqtJEDZgAACMaqNloiOS66UALRrVp3TqkmAsRkFs+T8zBE1Vbdi3KBiVJMeDXXdiYvMbQVSB7my5R1mR/OfJMwQs2i6g+Vef9iegoHCM7YZusQIdae887DzJL73+dI1BXYIpPbSPGrhSyzpEIozQ6TfDFeKLJ0UQZxO4rDLqPUnLEw8sn/xEqr7erdFnEHEZn+CJPGhxmmr2K7pIz46rR9i/GqZTzloUYADk9cMo3cbmNQn2AdEonNnmta3AaZlco+y9zjKbko1e91ZvGWohP0+miXhCZu8uvjxgHtz5FNrcCOnZgoX3IrC0qSHbxTb+H3z+vizYY4DIYkUBE+GuiAVdCv5GWHbq7qhpGM49nhzIIoFxU+I36CPYwzawoUwvqXHntGGb7PpdQ30M8SE7S1uE4ylQ78fVqvGwOIu/0M0srwmrXg8UMckAlGCHYreNkI67RrJF+GLSTtPgBL25ceZUQnOmBq2IKwshXajsmjbyrA2qIAatsB0NiIte9kK0zfpcGf+OsofK8uu2NTn+H4NlQh0FSgg8pSenQPfBQV9t9YJoww7O1KBKeP5nkN5ZCzZGX9w7mBB6AWagDj6eZDuHUp+i7XNE20jfS83dfscM1dsE+6pQ5EobtoD6CGyTxSHRtTryMXaIPCZ5aB3prbkvpOr/2Z/EoJP26+z0pacR0A3WvUKCFJVuMlagm1bKJkZxvIEkbnaf1sNJ0St1jN8FgTcvd6bnHlSboKZkdEgfOQ8jxjrO/249xSlO7VVA9CmE7wFqtZEJT/LIKjKx4EvTsx8Ax/JZh6j5l+AUfuIal6jAI='
 const event = {
     "categories": [],
     "subject": "office performance",
@@ -23,7 +23,7 @@ const event = {
         "address": {},
         "coordinates": {}
     },
-    "locations": [],    
+    "locations": [],
 }
 
 for (let i = 0; i < 1000; i++) {
@@ -47,6 +47,10 @@ for (let i = 0; i < 1000; i++) {
                 },
                 subject: event.subject + ' ' + i
             }
+        })
+        .then(function (response) {
+            // handle success
+            console.log(i);
         })
         .catch(err => {
             console.log('err : ', err);

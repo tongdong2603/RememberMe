@@ -1,5 +1,5 @@
 const axios = require('axios');
-const token = 'ya29.Glx5B9t7kVbEycBOOnU008kmsJ3HDk2rbA7zPeDGvztGylIXAgLGGWgW2XjoHtJKgTfE7lzPL6IpPpqjuEUUBTYhVw8aEqu41DBOUJ0R-VqZnE2VZD8NE4pndPXG2Q';
+const token = 'ya29.a0Adw1xeXqGVJ34Hsu1Mg84WBGY-byd1BRhTrKayW9U6VDpT5sdamNXnd4QzoW7bq24fxVNjG1zyy0EDq9ZZE3vvhzW-E5obHSkqudrqntAPnPXwHsZsyn4uXzU-_XRSN5D0bXYQWYoZ0SA4hyqwUfzF7-FDVFxvkcTnU';
 
 var isRunning = 1;
 
@@ -12,7 +12,7 @@ function clear() {
         console.log('Done!');
     }
 
-    axios.get('https://www.googleapis.com/calendar/v3/calendars/primary/events?updatedMin=2019-09-04T00%3A00%3A00Z', {
+    axios.get('https://www.googleapis.com/calendar/v3/calendars/primary/events?limit=1000', {
         headers: {
             Authorization: `Bearer ${token}`
         }

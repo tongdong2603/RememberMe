@@ -1,9 +1,11 @@
+https://viblo.asia/p/angular-4-tu-a-den-z-Qbq5QLpwlD8
 ngModel, ngFor, ngIf, () = "",
 localReferent: #nameValue
-@input truy?n d? li?u v�o trong component con
-@output truy?n d? li?t  ra cho component cha
+@input component con nhận giá trị từ cha
+@output component cha nhận giá trị từ cong thông qua New eventemitter và .emit
 @viewChild("", {static: true}) truy van vao phan tu con
-ng-content d? t�y bi?n th�nh ph?n b�n trong c?a component 
+@ContentChildvà @ContentChildren: các truy vấn sẽ trả về các chỉ thị hiện có bên trong <ng-content></ng-content>
+ng-content để tùy biến thành phần bên trong của component con  
 licycle {
 +ngOnchanges: Called after a bound input property changes
 + ngOnInit: Called once the component is initialized
@@ -14,4 +16,12 @@ licycle {
 + ngAfterViewChecked: Called every time the view (and child views) have been checked
 + ngOnDestroy: Called once the component is about to be destroyed
 }
-OnChanges kh�ng n�n th?c hi?n c�ng DoCheck
+OnChanges không nên thực hiện cùng DoCheck
+Viewencapsulation: thực hiện đóng gói Dom (kiểu chia sẻ tài nguyên như style)
+	+ViewEncapsulation.None: Không có bóng DOM.Phong cách không nằm trong phạm vi thành phần
+	+ViewEncapsulation.Native: Angular sẽ tạo Shadow DOM cho thành phần.Phong cách là phạm vi cho các thành phần.
+	+ViewEncapsulation.Emulation: Angular sẽ không tạo Shadow DOM cho thành phần.Phong cách sẽ được phạm vi cho các thành phần.Đây là giá trị mặc định cho đóng gói.
+attributeDirectives: thay đổi style của dom;(ng class, ng style...)
+structttural Directives: thay đổi cấu trúc DOM
+Set: Biến property thành như một method 
+Dependency Injection là cách design codes sao cho nó có thể "tiêm" các đối tượng dependency của một đối tượng vào trong đối tượng đó.

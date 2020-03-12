@@ -1,5 +1,5 @@
 const axios = require('axios');
-const token = 'eyJ0eXAiOiJKV1QiLCJub25jZSI6InBuVS1mTjY1TVg3WkNIdFNPVWR2RnNzclJoa1A3SGxPeEN5dlluaURiNVEiLCJhbGciOiJSUzI1NiIsIng1dCI6ImFQY3R3X29kdlJPb0VOZzNWb09sSWgydGlFcyIsImtpZCI6ImFQY3R3X29kdlJPb0VOZzNWb09sSWgydGlFcyJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8wNmYxYjg5Zi0wN2U4LTQ2NGYtYjQwOC1lYzFiNDU3MDNmMzEvIiwiaWF0IjoxNTcwMDcyNTU3LCJuYmYiOjE1NzAwNzI1NTcsImV4cCI6MTU3MDA3NjQ1NywiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IjQyVmdZT2dUNmY1OTRaNlcvZVZTdmFyZXI1L3FEWTZGSEZzY3JqR0gyZWk4MEF5R0NuWUEiLCJhbXIiOlsicHdkIl0sImFwcF9kaXNwbGF5bmFtZSI6Ikdhcm9vbiBPZmZpY2UgQ2FsZW5kYXIgU3luYyIsImFwcGlkIjoiZWZiOTJjMGItYmI2OS00OTE5LTljM2YtZmVhYzlmZTU4MjUyIiwiYXBwaWRhY3IiOiIxIiwiaW5fY29ycCI6InRydWUiLCJpcGFkZHIiOiIxMDMuODguMTEzLjE0NiIsIm5hbWUiOiJOZ3V5ZW4gVGllbiBIdW5nIDIwMTQyMTgwIiwib2lkIjoiN2MyYjE3MmQtODA2My00ODFhLTg3YWUtNDFkNmFjODA5Y2VjIiwib25wcmVtX3NpZCI6IlMtMS01LTIxLTI3NDYyNTEwMDctMTMyNDU5NTIwNi03ODE2NTQzNTEtMjc1ODciLCJwbGF0ZiI6IjMiLCJwdWlkIjoiMTAwMzNGRkZBNURFNjc5QSIsInNjcCI6IkNhbGVuZGFycy5SZWFkLlNoYXJlZCBDYWxlbmRhcnMuUmVhZFdyaXRlIENhbGVuZGFycy5SZWFkV3JpdGUuU2hhcmVkIG9wZW5pZCBwcm9maWxlIFVzZXIuUmVhZFdyaXRlIGVtYWlsIiwic3ViIjoiS25SamV0LUJYS3l6SG1YV0xKWWRuT0I3OVBVTno3bjAzc3h2cVl2SnlvQSIsInRpZCI6IjA2ZjFiODlmLTA3ZTgtNDY0Zi1iNDA4LWVjMWI0NTcwM2YzMSIsInVuaXF1ZV9uYW1lIjoiaHVuZy5udDE0MjE4MEBzaXMuaHVzdC5lZHUudm4iLCJ1cG4iOiJodW5nLm50MTQyMTgwQHNpcy5odXN0LmVkdS52biIsInV0aSI6IlJWWFYySXk3blVDSE9NeENhendJQUEiLCJ2ZXIiOiIxLjAiLCJ4bXNfc3QiOnsic3ViIjoiWi1aVDZjTjdQcXVQM1ZqenIwOHczNnI2anBIOHlnNVJuVUFLMWExNGE4WSJ9LCJ4bXNfdGNkdCI6MTUwMjg3MTE0Mn0.jtFqB2dBnA6zPGl8pffNI0W7cwBf0PvwEVymV2A_XBtGIdeeLwCmAdnlaYaPDxD9N9twLV9KUWzLsxrwVUlEp8LGCY2_r-S28lMf27EwpT8uUfJ8nh3Jvc8ma1-qqqYGTrnsM-9aftpv_eqInNW_Zqvy0IqRm-o7ojbuJeCW2R6zKWdTRoI8WALEAse2awEGDm6ORMSiMCGbjEb5CKbuRpf1gf6LOpS4S19Zif_W5Hi2ZHcpYoNVfdtzhrUQWHqcqU3zRoU0GfBc2BcB_0V9O0xBufoQ2bLlOl3QGXXLO3WnjBHEy78EmA7NSZAoaASoA8jHQLi7xFQSWHIsGphCAw';
+const token = 'EwBwA8l6BAAUO9chh8cJscQLmU+LSWpbnr0vmwwAAZMvNiz2U5HwvoRp9cVUfPI69YAyl/5x/8+0TU52cGvuTU2U1uTymr2ckhy93T10iA7v2CJZeJ9k1ondu8Zv7jV9DZq3TAAude3fr21E/VgwvxzwmgDnsiBO69IhcM6M5CbR65kDkC2H5CqYjaEqBWdUtXDtSh//bdkuyTY7dh4X6suwMJYGomTtdAcBt7Ke/6BWz5ZzKIIJ3P8XmoHrOSCM1BAHRWLCgqoZBv2ofW43izfTbgjtF32vwDxizYoEOEb/XrlZ1Ltp8LjP0Fv5anaxyxleGw1ubKH/JkQ54hkuZ3fpQ6GWySLiGkGWPql0lazZ7xjWCfKmHZ2xjSyYMW8DZgAACCL+f8rnwSt9QALwclvPENR6iWw2BukQGxzFkJdaPFQRLKh37Oc+CK/shoaMgJZXRO7dNWrnpwLh6CJ5M4fjRcqZ+tDhY9NRy1HSaW1wOVRUm4Hwhw9xpv0+NAgXCGJW1V5xJCSSPk/uiGq5ilVC8APqHC2WDWizkr27yGXorXcRTVU+2jsXeTDZq3l+bGpWxnB2tQXDeYcXO7WDdx0KHJkZSqBEWQ4MpFiUVa1mBu58giTEIDkMkg48Cuov0hTuaNSpL7sqOSTV54bghLOoAVQYJoMDGit3t14aPvEg/naHtInchAS54RqPACplXj/Gi2pAvd3HZipvfxewWts8Nu6GX4VzUv5+Q4oJbsxwhe9esE+z1zssqycUXeJBA+fff9L7RJrGr3KpDtdHOI45zRehvNl+YbWqolR8SwVPI0gsgJTH2GKTrrA5mvzBTzW/0HrVtE/s2VzWcVBKmVtGRJR5FlWZaDAkYgWOyzS3yVZz0a/6nykWxd113hZtUgDLQwrITmxFvFDvMfC2iUNtlu00O5MZcQmIUS18ge/MtgCWe1fY62Hg+jn5Q5m1HJVYILSjLrF+nYko3Y8HW23xMKsUXg4e6zGT1AzLymP62mBfWIhisvf1apjiQ1GIt+so4oZkzsX8jY59cl8Lp52oofWOSKw8lE9fL5AzVWYzNffpsUAvnkYCSEVuOfBahByr5zZk+5IilitVISrW4AWbFS0KI3jHtOXStOeY4tFY2ZMOudpoKwYSECtgQtLxS5fY0LtQECOZovH1dEqMAg==';
 
 var isRunning = 1;
 
@@ -18,7 +18,7 @@ function clear() {
     }
   }).then(async resp => {
     if(resp.data.value.length === 0) {
-      console.log('Done!');      
+      console.log('Done!');
       isRunning = 0;
       return;
     }
@@ -33,7 +33,7 @@ function clear() {
         }).catch(err => {
           console.log('err')
         })
-      }, 250*i)    
+      }, 250*i)
     })
   }).catch(err => {
     console.log(err)
@@ -57,7 +57,7 @@ function clear() {
 //       }).catch(err => {
 //         console.log('err', err)
 //       })
-//     }, 250*i)    
+//     }, 250*i)
 //   })
 //   // res.send('deleted!');
 // }).catch(err => {
