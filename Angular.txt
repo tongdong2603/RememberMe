@@ -1,5 +1,8 @@
 https://viblo.asia/p/angular-4-tu-a-den-z-Qbq5QLpwlD8
 ngModel, ngFor, ngIf, () = "",
+[ngModel] data binding one way
+[(ngModel)] data binding 2 chiều
+Observable from rxjs/Observable && of from rxjs/Observable/of để thực hiện lấy dữ liệu một cách bất đồng bộ; component dùng service phải dung subcrible arrow function để lấy dữ liệu
 localReferent: #nameValue
 @input component con nhận giá trị từ cha
 @output component cha nhận giá trị từ cong thông qua New eventemitter và .emit
@@ -24,4 +27,8 @@ Viewencapsulation: thực hiện đóng gói Dom (kiểu chia sẻ tài nguyên 
 attributeDirectives: thay đổi style của dom;(ng class, ng style...)
 structttural Directives: thay đổi cấu trúc DOM
 Set: Biến property thành như một method 
+Service:
 Dependency Injection là cách design codes sao cho nó có thể "tiêm" các đối tượng dependency của một đối tượng vào trong đối tượng đó.
+ngModule --flat --module=app để tạo module
+RouterModule, Routes from angular/router routes Router =[ {path: '',redirect:'path', pathMatch: 'full': component},{path: 'path', component: component}]
+import ActiedRoute Location : route : ActiedRoute => this.route.snap.paramMap.get("iddule")
