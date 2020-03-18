@@ -1,4 +1,6 @@
-{
+{ "scripts": {
+    "upload-dev": "node reNameUpLoad.js && cd ../Kintone/nw-garoon-office/dist/customize/cloud && aws s3 sync . s3://garsche-dev/garoon-office-cloud --exclude *.min.js && cd ../../../../nw-garoon-google/dist/customize/cloud && aws s3 sync . s3://garsche-dev/garoon-google-cloud --exclude *.min.js"
+},
   "dependencies": {
     "aws-sdk": "^2.493.0",
     "axios": "^0.19.0",
