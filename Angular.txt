@@ -3,7 +3,7 @@ ngModel, ngFor, ngIf, () = "",
 [ngModel] data binding one way
 [(ngModel)] data binding 2 chiều
 Observable from rxjs/Observable && of from rxjs/Observable/of để thực hiện lấy dữ liệu một cách bất đồng bộ; component dùng service phải dung subcrible arrow function để lấy dữ liệu
-localReferent: #nameValue
+localReferent: #nameValue ElementRef
 @input component con nhận giá trị từ cha
 @output component cha nhận giá trị từ cong thông qua New eventemitter và .emit
 @viewChild("", {static: true}) truy van vao phan tu con
@@ -30,5 +30,40 @@ Set: Biến property thành như một method
 Service:
 Dependency Injection là cách design codes sao cho nó có thể "tiêm" các đối tượng dependency của một đối tượng vào trong đối tượng đó.
 ngModule --flat --module=app để tạo module
+-------------------------------------------------------------------------------------------------------------------------
+Router
 RouterModule, Routes from angular/router routes Router =[ {path: '',redirect:'path', pathMatch: 'full': component},{path: 'path', component: component}]
 import ActiedRoute Location : route : ActiedRoute => this.route.snap.paramMap.get("iddule")
+path: Đường dẫn URL của component hiện tại.
+component: Ứng với đường dẫn bên trên thì load component nào.
+redirectTo: Chuyển hướng đến URL này nếu URL ở path không trùng. Ví dụ, khi người dùng gõ URL linh tinh, chúng ta muốn chuyển hướng và load trang Home hoặc trang báo lỗi 404 thì cần ghi rõ URL trang Home hoặc 404 vào redirectTo.
+pathMatch: Cài đặt xem chế độ kiểm tra url là như thế nào. khi giá trị là full thì nghĩa là toàn bộ url từ đầu đến cuối sẽ phải chính xác như trong bộ JSON Router. Còn khi giá trị là prefix thì chuỗi đầu tiên của url (dấu sược đầu tiên) sẽ được kiểm tra. Mặc định nếu không nói gì thì prefix sẽ được chọn.
+[routerLinkActiveOptions] = "{exact: true}";
+routerLinkActive = "class"
++++++++++
+--skipTests=true
+====
+Eventbingding router
+import Router 
+sử dụng .navigate([url])||.navigateByUrl(url)
++++++++++
++ get params in router
++ import ActivedRoute
++ cú pháp .snapshot.params
++ không áp dụng chuyển trang khi trên cùng 1 router. ex. product/1 -> product/2 không được
++ Trả về Subcription 
++ Cú pháp ActivedRoute.params.subcrible(params: Params => {handler})
++ nên hủy đối tượng subcrible khi component bị hủy (ngOnDestroy) .unsubcrible();
++++++++++++
+get params tại query params
++ template : routerLink + queryparams = "{}"
++ eventBinding: .navigate(['path'], {queryparams: {key: value}})
++ .activeRoute.queryparams.subcrible(() => {});
++ relativeTo : this.adtivedRouteService.parents;
++ childrouter :  activeRoute.parent.params.subcrible((params: Params) => {Handker})
++++++++++++
+Phân quyền người dùng:
+- Canactive
+	+ ng g guard: to người bảo vệ chó components 
+	+ thêm vào trong phầm appRoutes canActivate[guard] CanActivateChild[guard]
+-CanDeactivate: không thể thoát ra khỏi component
