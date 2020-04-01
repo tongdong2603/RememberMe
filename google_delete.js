@@ -1,5 +1,5 @@
 const axios = require('axios');
-const token = 'ya29.a0Adw1xeXvQkWL_rEq_0TkaO-yAepOe_4bGyvMa1rsKoA3SKnwUU84-98qG6t5VcKy4mbbkaz87_3oJ94UBE0QLWfca-QuSzoPDSGYCpuMXZ-1AiAwvl3V0q5_Nq2eNlnR9i7RCC4X5CbZ8xbLxYqkE2WFpGEFmt5kOho';
+const token = 'ya29.a0Ae4lvC0AWPoWsuzH7VfVQNe6U5CZcuduaONzFex4J8_Hq4Xx3h5nQVuxpBeDAzWJuHJd029X80E8EPQ8CTgaoWVqUy6tEjdflEZqE8NPToNrKvTE_MfzMX88XVOvnJwCwoPaRHc2K5au0OwibJgzP7hc0ERuLJ510WY';
 
 var isRunning = 1;
 
@@ -12,7 +12,7 @@ function clear() {
         console.log('Done!');
     }
 
-    axios.get('https://www.googleapis.com/calendar/v3/calendars/primary/events?limit=1000', {
+    axios.get('https://www.googleapis.com/calendar/v3/calendars/primary/events?limit=1000&singleEvents=true&orderBy=startTime&timeMin=2020-03-31T00:00:00Z', {
         headers: {
             Authorization: `Bearer ${token}`
         }
