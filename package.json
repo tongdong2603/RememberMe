@@ -1,11 +1,29 @@
 {
   "dependencies": {
-    "aws-sdk": "^2.493.0",
+    "aws-sdk": "^2.653.0",
     "axios": "^0.19.0",
     "express": "^4.17.1",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.26",
     "request": "^2.88.0",
     "request-promise": "^4.2.4"
-  }
+  },
+  "name": "rememberme",
+  "description": "remember",
+  "version": "1.0.0",
+  "main": "aws.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tongdong2603/RememberMe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tongdong2603/RememberMe/issues"
+  },
+  "homepage": "https://github.com/tongdong2603/RememberMe#readme"
 }
