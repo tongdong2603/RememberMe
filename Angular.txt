@@ -61,9 +61,23 @@ get params tại query params
 + .activeRoute.queryparams.subcrible(() => {});
 + relativeTo : this.adtivedRouteService.parents;
 + childrouter :  activeRoute.parent.params.subcrible((params: Params) => {Handker})
+++++++++++++
++ có thể truyền data tĩnh  vào router = {path: , component:, data: {}}
++ co thể truyền data đông bằng resolve: {}
++ Dùng {userHash: true} trong forRoot khi tải lại không nhảy qua khi trang mặc địh
 +++++++++++
 Phân quyền người dùng:
 - Canactive
 	+ ng g guard: to người bảo vệ chó components 
 	+ thêm vào trong phầm appRoutes canActivate[guard] CanActivateChild[guard]
 -CanDeactivate: không thể thoát ra khỏi component
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+- Template-driven forms:
+	+ ngModel để chọ từng phần tử trong forms + ngSubmit + #(name) = ngForm (các state là: valid, touched....)
+	+ ngModelGroup để nhóm các phần tử vào một nhóm 
+	+ ngForm.setValue: để đặt giá trị cho từng thành phần trong form
+	+ ngForm.form.patchValue: chọn các trường ghi đè lên giữ lại các phần tử không được chọn
+- Reactive Approach Forms: 
+	+ Khai báo Module : ReactiveModule
+	+ Khai báo ở OnInit: new Formsgroup ({'field': new FormsControl, .....})
+	+ Khai báo ở form html: [formGroup] = 'tên form'
