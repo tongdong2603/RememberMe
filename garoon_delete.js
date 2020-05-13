@@ -3,8 +3,8 @@ const axios = require('axios');
 const urlPackage = 'http://3.115.17.206/scripts/cbgrn/grn.exe/'
 const uriApi = 'api/v1/schedule/events'
 const tokenPackage = 'ZmFiYmk6RmFiYmlfZGV2QDIwMTk=';
-const cloudUrl = "https://xf64e.cybozu.com/g/"
-const tokenCloud = '1.cJMepIDlbFAWRtTd1IEmgHKRGm1Lt1NLvFunXyOwoP9uhkUC';
+const cloudUrl = "https://test-dev-7.cybozu.com/g/"
+const tokenCloud = '1.XG5aeTi_kTO-1_-xAAgCF2qqoFOQeev2R3s1FqJptbIGRQ7t';
 var isRunning = 1;
 
 clear();
@@ -18,7 +18,7 @@ function clear() {
   console.log(`${cloudUrl}${uriApi}?limit=1000&rangeStart=2020-03-31T12%3A00%3A00%2B09%3A00`);
   axios.get(`${cloudUrl}${uriApi}?limit=1000&rangeStart=2020-03-31T12%3A00%3A00%2B09%3A00`, {
     headers: {
-      'X-Cybozu-Authorization': `${tokenCloud}`,
+      // 'X-Cybozu-Authorization': `${tokenCloud}`,
       'Authorization': `Bearer ${tokenCloud}`
     }
   }).then(async resp => {
@@ -29,7 +29,7 @@ function clear() {
     // console.log('resp.data.events[0]', resp.data.events[0]);
     // console.log('resp.data.events[resp.data.events.length-1]', resp.data.events[resp.data.events.length-1]);
     await resp.data.events.forEach((el,i) => {
-      if(el.subject === 'event xóa đi'){
+
         setTimeout(function() {
           console.log('Delete event id = ' + el.id);
           axios.delete(`${cloudUrl}${uriApi}/${el.id}`, {
@@ -43,7 +43,7 @@ function clear() {
             console.log("delete rôi nha")
           })
         }, 50*i)
-      }
+
     })
   }).catch(err => {
     console.log('err', err)
