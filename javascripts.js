@@ -12,6 +12,7 @@
 	+ const propertyName = "Rikikudo";const object = {[propertyName]: "Value"} để đổi key của object
   + console.table(tabledata, tablecolumns): tabledata bắt buộc, tablecollum hiển thị cột
   + console.time(label) & console.timeEnd(label): do thời gian trong console label là tên biến thời gian
+ * https://medium.com/javascript-in-plain-english/common-javascript-algorithms-you-must-know-9ca569ddf46f
  */
 
 const resetAnimation = (item) => {
