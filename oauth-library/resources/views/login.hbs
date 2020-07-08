@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Login</title>
+
+		<link rel="stylesheet" href="/css/guest.css">
+
+	</head>
+
+	<body>
+		<div class="container pt-4 mt-4">
+	    <div class="row">
+	      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+	        <div class="card card-signin my-5">
+	          <div class="card-body">
+	            <h5 class="card-title text-center">Sign In</h5>
+	            <form class="form-signin">
+	              <div class="social-login-buttons d-flex justify-content-center">
+					<a class="btn btn-outline-dark btn-link-1 btn-link-1-twitter mr-2" href="{{signInUrl}}">
+						<i class="fa fa-windows"></i> Microsoft
+					</a>
+					<a class="btn btn-outline-dark btn-link-1 btn-link-1-twitter mr-2" href="https://login.microsoftonline.com/common/adminconsent?client_id=efb92c0b-bb69-4919-9c3f-feac9fe58252&state=12345&redirect_uri=http://localhost:3003/oauth2/microsoft/callback">
+						<i class="fa fa-windows"></i> Microsoft service
+					</a>
+					<a class="btn btn-outline-dark btn-link-1 btn-link-1-facebook mr-2" 
+						href="{{garoonUrl}}">
+						<i class="fa fa-google"></i> Garoon
+					</a>
+					<a class="btn btn-outline-dark btn-link-1 btn-link-1-google-plus" href="https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=765707154637-a638nia00o720m9540pi36o5ljjggm2t.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Flocalhost%3A3000%2Foauth2%2Fgoogle%2Fcallback&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcalendar%20openid%20profile%20email&approval_prompt=force&access_type=offline">
+						<i class="fa fa-google-plus"></i> Google 
+					</a>
+				</div>
+	            </form>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+
+	</body>
+
+</html>

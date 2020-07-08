@@ -1,0 +1,38 @@
+
+
+.nav-primary {
+	background-color:$primaryBg;
+	z-index:9999;
+	a {
+		color:$primaryCl;
+		padding-top:0;
+		padding-bottom:0;
+		&:hover,
+		&:focus {
+			color:$primaryClHover;
+		}
+	}
+	.form-control {
+		background: $colorContract;
+		border-color: $colorContract;
+		color:$white;
+		+ .btn {
+			background: $colorContract;
+			border-color: $colorContract;
+			color:$primaryCl;
+		}
+		&:hover,
+		&:focus {
+			border-color: $dark;
+			+ .btn {
+				border-color: $dark;
+				color:$white;
+			}
+		}
+	}
+	.navbar-brand {
+		padding-top:0;
+		padding-bottom:0;
+		font-size:0.9rem;
+	}
+}

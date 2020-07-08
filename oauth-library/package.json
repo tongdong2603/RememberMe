@@ -1,0 +1,48 @@
+{
+  "name": "garoon_sources",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "devDependencies": {
+    "cross-env": "^5.1.4"
+  },
+  "dependencies": {
+    "@microsoft/microsoft-graph-client": "^1.5.2",
+    "async": "latest",
+    "aws-sdk": "^2.471.0",
+    "basic-auth-connect": "latest",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "~1.13.2",
+    "client-sessions": "latest",
+    "connect": "latest",
+    "connect-dynamodb": "^2.0.3",
+    "connect-flash": "latest",
+    "cookie-parser": "~1.4.3",
+    "dotenv": "^7.0.0",
+    "express": "~4.16.0",
+    "express-mailer": "^0.3.0",
+    "express-session": "latest",
+    "fs-extra": "latest",
+    "hbs": "^4.0.4",
+    "http-errors": "~1.6.2",
+    "http-proxy": "latest",
+    "jsonwebtoken": "^8.5.1",
+    "moment-timezone": "^0.5.25",
+    "multer": "latest",
+    "node-constants": "latest",
+    "nodemailer": "^2.4.1",
+    "nodemailer-smtp-transport": "^2.5.0",
+    "nodemon": "latest",
+    "numeral": "latest",
+    "passport": "latest",
+    "passport-local": "latest",
+    "request": "^2.88.2",
+    "simple-encryptor": "latest",
+    "simple-oauth2": "^2.2.1"
+  }
+}

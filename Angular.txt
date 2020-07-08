@@ -1,4 +1,5 @@
 https://viblo.asia/p/angular-4-tu-a-den-z-Qbq5QLpwlD8
+https://loading.io/css
 ngModel, ngFor, ngIf, () = "",
 [ngModel] data binding one way
 [(ngModel)] data binding 2 chiều
@@ -82,3 +83,34 @@ Phân quyền người dùng:
 	+ Khai báo Module : ReactiveModule
 	+ Khai báo ở OnInit: new Formsgroup ({'field': new FormsControl, .....})
 	+ Khai báo ở form html: [formGroup] = 'tên form'
+====================================================================
+Dynamic Component
++ có thể dùng ng if (không nên dùng);(tất cả làm ở component muốn gắn dynamic Component
++ impport component muốn gắn vào dom (dynamic) ex alertComponent
++ import service componentFactoryResolver
++ khai báo const component =t his.componentFactoryResolver.resolveComponentFactory(AlertComponent)
++ tạo directive để thông báo địa điểm găn component ( <ng-template directive>)
++ Khai báo @ViewChild(directive, {static: false}) abc: directive +
++ khai báo acomponent = this.abc.viewContainerRef 
++ acomponent.clear();
++ const bcomponentdef = acomponent.createComponent(component)
++ Khai báo component dynamic ở entryComponents trong ng module 
++ ++++++++++++++
+data binding: 
++ ở dynamic c dùng @input
++ ở c muốn gắn dynamic component: bcomponentdef.instance.data = data truyền vào
+event  , event.emit
++ ở c gắn instance.event.subcrible(() => {
+	event.unsubcrible()
+ acomponent.clear() })
+================================================================================================================
+NgModule
++ Mỗi thàng phần cần chia thành 1 module
++ Mỗi module gồm @NgModule({declarations: ...component, export: [...component] // không cần vì đã khái báo ở routing module, import: [... [RouterModule, CommmonModule, ...module]]}) + export class {}
++ routing module khai vào route và import RouterModule.forchild(route)
+lazy loading 
++ Khai báo trông app routes {
+  path: 'your-path',
+  loadChildren: () => import('./your-module-path/module-name.module').then(m => m.ModuleName)
+} và bỏ module khai báo trong appmodule
+

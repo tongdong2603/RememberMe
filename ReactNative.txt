@@ -1,0 +1,45 @@
+Basic ReactNative
+các thuộc tính lạ của react-native:
+TouchableWithoutFeedBack,
+Keyboard
+Alert
+Dimensions
++ KeyboardAvoidinhView: bao bên ngoài để đảm bảo keyboad không bị phủ lên app
+	- behavior="position" , "padding", "height" 
+	- keyboadVerticalOffset: để set màn hình trượt lên khi mở keyboad
+=================
++ Truyền data từ parent vào con:
+	ở parent <childrenComponent data = {data}> => ở children gọi props.data
++ Truyền data từ con ra parent:
+	ở children props.data(this, {data})
+	ở parent truyền cho con một hàm, hàm nhận param
++ Touchable , TouchableOpacity, TouchableHightlight, TouchableNativeFeedback dùng để tạo sự kiên khi ấn vào component (TouchableOpacity sẽ làm mờ component khi ấn, làm xung quanh component highlight khi ấn, TouchableNativeFeedback làm hiệu ứng lan tỏa khi ấn vào component)
++ Modal cần thuộc tính visible để hiển thị có thể thêm options animationType để hiển thị đẹp hơn
+======================================================================
+DEBUGER
++ Vuốt mở rộng chọ remote Js Debugging
+==============
+useRef
++ Dùng để lưu giá trị một element sử dụng thuộc tính .current để mỗi lần render không khởi tạo lại (vd: current = useRef(0) settimeout  current.current sẽ tăng không phải khởi tạo lại bằng 0
+useEffect để quản lý vòng đời của một component:
+	- #syntax
+		useEffect(effectFunction, arrayDependencies)
+	- useEffect(function) : được gọi mỗi khi component render xong (componentDidUpdate)
+	- useEffect(function, []): được gọi một lần khi component được gắn vào dom(componentDidMount)
+	-
+	Thì thực tế thì useEffect cho phép chúng ta return 1 function, function này sẽ thực thi trước khi mà component đó được unmounted.
+=================================================================
+customize font
+import * as Font from 'expo-font'
+const fetchFonts = () => {Font.loadAsync({'open-sans': require('./assets/fonts/OpenSans-Bold.ttf')})}
+import {AppLoading} from 'expo'
+=================
+customize ảnh: 
++ với ảnh trong folder tạo view bọc lấy ảnh rồi 27 module 4
++ responesive: Dùng import {Dimensions} của react-native
+==============
+Xoay màn hình: 
++ ở app.json: 
+	- "orientation": "portrait":chỉ đọc "landscape": chỉ ngang, "default" cả 2
+	- cần thay đổi chiều dài rộng của button khi xoay màn hình bằng cách xử dụng state, va khi Dimensions.addlistened("change", set laji state )	 (module 5 video 9) 
+	

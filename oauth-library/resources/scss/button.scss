@@ -1,0 +1,11 @@
+.btn-outline-default {
+  color: $dark;
+  border-color: $input-border-color;
+  background: $white;
+  box-shadow: $input-box-shadow;
+  vertical-align: top;
+  border-radius: $border-radius;
+  &.dashed {
+  	border:1px dashed $input-border-color;
+  }
+}
