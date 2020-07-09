@@ -1,12 +1,16 @@
 Basic ReactNative
+===========================================
 các thuộc tính lạ của react-native:
 TouchableWithoutFeedBack,
 Keyboard
 Alert
 Dimensions
-+ KeyboardAvoidinhView: bao bên ngoài để đảm bảo keyboad không bị phủ lên app
+Platform: .OS nhận biết môi trường là android hay ios
+	- .select({ios: ..., android: ....})
+KeyboardAvoidinhView: bao bên ngoài để đảm bảo keyboad không bị phủ lên app
 	- behavior="position" , "padding", "height" 
 	- keyboadVerticalOffset: để set màn hình trượt lên khi mở keyboad
+SafeAreaView: bọc trọng app.js
 =================
 + Truyền data từ parent vào con:
 	ở parent <childrenComponent data = {data}> => ở children gọi props.data
@@ -42,4 +46,31 @@ Xoay màn hình:
 + ở app.json: 
 	- "orientation": "portrait":chỉ đọc "landscape": chỉ ngang, "default" cả 2
 	- cần thay đổi chiều dài rộng của button khi xoay màn hình bằng cách xử dụng state, va khi Dimensions.addlistened("change", set laji state )	 (module 5 video 9) 
+	- có thể tạo file .android .ios để react-native nhận biết nút cho các kiểu hệ điều hành
++ Navigation: 
+	So when we use the StackNavigator (= next lecture), run
+
+	npm install --save react-navigation-stack
+	before you start using it (with v3 and lower, it was part of react-navigation itself).
+
+	Also add this import in the file where you are using createStackNavigator:
+
+	import { createStackNavigator } from 'react-navigation-stack';
+	Same for TabsNavigator (used a little bit later in this module):
+
+	npm install --save react-navigation-tabs
+	import { createTabsNavigator } from 'react-navigation-tabs';
+	And also for DrawerNavigator (also used later in this module):
+
+	npm install --save react-navigation-drawer
+	import { createDrawerNavigator } from 'react-navigation-drawer';
 	
+	- Khi truyền vào button thì sẽ gọi onPress={() => {props.navigation.navigate({routeName: 'Tên component đã khai báo', (có thể dùng thêm params: {categoryId:} để truyền thêm params)})}} ;
+	có thể dùng navigation.push(khi tải lại cac trang cũ) pop() để back lại màn trước, replace() thay đổi màn không lưu lại stack
+	- component khi thay đổi thông tin và style có thể dùng CategoriesSceen.navigationOptions = {
+		  headerTitle: 'Meal Categories',
+		  headerStyle: {
+			backgroundColor: '#4a148c'
+		  },
+		  headerTintColor: 'white'
+		}
