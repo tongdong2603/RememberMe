@@ -3,8 +3,8 @@ const axios = require('axios');
 const urlPackage = 'http://52.69.163.106/scripts/cbgrn/grn.exe/';
 const uriApi = 'api/v1/schedule/events';
 const tokenPackage = 'bWluaDptaW5o';
-const cloudUrl = "https://test-dev-8.cybozu.com/g/";
-const tokenCloud = '1.YXegqNFprHatbDV5yx6wpAAv5rkBN8BTzodb8pZQAeaDPJRT';
+const cloudUrl = "https://test-11-dev.cybozu.com/g/";
+const tokenCloud = '1.wcSCtXt5YrelAYt-nwMAx6rii-fcf-onXvGM-2b2Km7lhmM3';
 let isRunning = 1;
 
 clear();

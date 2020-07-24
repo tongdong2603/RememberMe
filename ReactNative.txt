@@ -1,5 +1,18 @@
 Basic ReactNative
 ===========================================
+các packgage base:
+- react-navigation-drawer
+- react-navigation-stack
+- react-navigation-tabs
+- react-navigation-header-buttons
+- react-native-screens
+- react-navigation-material-bottom-tabs
+- react-native-paper
+- https://daveceddia.com/deploy-react-express-app-heroku/?fbclid=IwAR3SGUuPdl1yxFb2TDC3Gps5lBsE8Jp2XBEycHMemWRtfHv4o1vAQxw07CQ
+npm i --save react-navigation-drawer react-native-safe-area-context react-navigation-stack react-navigation-tabs react-navigation-header-buttons react-native-screens react-navigation-material-bottom-tabs react-native-paper react-navigation react-native-reanimated react-native-ionicons
+- react-native start --reset-cache
+
+===========================================
 các thuộc tính lạ của react-native:
 TouchableWithoutFeedBack,
 Keyboard
@@ -65,7 +78,8 @@ Xoay màn hình:
 	npm install --save react-navigation-drawer
 	import { createDrawerNavigator } from 'react-navigation-drawer';
 	
-	- Khi truyền vào button thì sẽ gọi onPress={() => {props.navigation.navigate({routeName: 'Tên component đã khai báo', (có thể dùng thêm params: {categoryId:} để truyền thêm params)})}} ;
+	- Khi truyền vào button thì sẽ gọi onPress={() => {props.navigation.navigate({routeName: 'Tên component đã khai báo', (có thể dùng thêm params: {categoryId:} để truyền thêm params)})}};
+		dùng props.navigation.getParam('categoryId')
 	có thể dùng navigation.push(khi tải lại cac trang cũ) pop() để back lại màn trước, replace() thay đổi màn không lưu lại stack
 	- component khi thay đổi thông tin và style có thể dùng CategoriesSceen.navigationOptions = {
 		  headerTitle: 'Meal Categories',
@@ -74,3 +88,5 @@ Xoay màn hình:
 		  },
 		  headerTintColor: 'white'
 		}
+	- mOdule 6 video 17
+	
