@@ -72,3 +72,9 @@ axios
 //     console.log("Finished:", results.data[0][0]);
 //   }
 // });
+const myHardWare = {
+  'CPU': "intel 5 42100",
+  'GPU': 'ndivia geforce 820M',
+  'wifi': 'Dell wireless 1705 802.11 b|g|n (2.4GHZ)',
+  'hệ điều hành': 'high serria'
+}

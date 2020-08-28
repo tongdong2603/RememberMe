@@ -3,8 +3,8 @@ const axios = require('axios');
 const urlPackage = 'http://52.69.163.106/scripts/cbgrn/grn.exe/';
 const uriApi = 'api/v1/schedule/events';
 const tokenPackage = 'bWluaDptaW5o';
-const cloudUrl = "https://test-11-dev.cybozu.com/g/";
-const tokenCloud = '1.wcSCtXt5YrelAYt-nwMAx6rii-fcf-onXvGM-2b2Km7lhmM3';
+const cloudUrl = "https://wr0dd.cybozu.com/g/";
+const tokenCloud = '1.pqmzDC5SnvqjFAF9rNnySAGPU1SqLpy-afReJlpn1I0JJh0-';
 let isRunning = 1;
 
 clear();
@@ -29,19 +29,21 @@ function clear() {
     // console.log('resp.data.events[resp.data.events.length-1]', resp.data.events[resp.data.events.length-1]);
     await resp.data.events.forEach((el,i) => {
 
-      setTimeout(function() {
-        console.log('Delete event id = ' + el.subject);
-        axios.delete(`${cloudUrl}${uriApi}/${el.id}`, {
-          headers: {
-            // 'X-Cybozu-Authorization': `${tokenCloud}`,
-            'Authorization': `Bearer ${tokenCloud}`
-          }
-        }).catch(err => {
-          console.log('err')
-        }).then(res => {
-          console.log("delete rôi nha")
-        })
-      }, 150*i)
+      if (el.subject ==='eddit Let\'s go for lunch') {
+        setTimeout(function() {
+          console.log('Delete event id = ' + el.subject);
+          axios.delete(`${cloudUrl}${uriApi}/${el.id}`, {
+            headers: {
+              // 'X-Cybozu-Authorization': `${tokenCloud}`,
+              'Authorization': `Bearer ${tokenCloud}`
+            }
+          }).catch(err => {
+            console.log('err')
+          }).then(res => {
+            console.log("delete rôi nha")
+          })
+        }, 150*i)
+      }
 
     })
   }).catch(err => {

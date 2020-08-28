@@ -1,5 +1,5 @@
 /**
- * Kiến thức cần nhớ
+ *
  * HTML character codes
 	https://www.rapidtables.com/web/html/html-codes.html
 	https://www.npmjs.com/package/html-entities
@@ -14,6 +14,20 @@
   + console.time(label) & console.timeEnd(label): do thời gian trong console label là tên biến thời gian
  * https://medium.com/javascript-in-plain-english/common-javascript-algorithms-you-must-know-9ca569ddf46f
  */
+
+/**
+ * Delete HTML tag in string*/
+const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');
+
+/** Convert hyp-hens to camelCase*/
+const convert = (str) => {
+  const camelizeRe = /-(\w)/g;
+  return str.replace(camelizeRe, (_,c) => c ? c.toUpperCase() : '');
+};
+
+/**
+ * Detect Browser*/
+window.navigator.userAgent.toLowerCase();
 
 const resetAnimation = (item) => {
   if (item && item.style) {
