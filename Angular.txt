@@ -113,4 +113,4 @@ lazy loading
   path: 'your-path',
   loadChildren: () => import('./your-module-path/module-name.module').then(m => m.ModuleName)
 } và bỏ module khai báo trong appmodule
-
+https://codingui.dev/?fbclid=IwAR1UseBH7KDHAbcszCPsHeANaBEeVf1bZZWnCOhW-cEzZ62V4ti8fUsVYQU

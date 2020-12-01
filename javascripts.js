@@ -12,7 +12,16 @@
 	+ const propertyName = "Rikikudo";const object = {[propertyName]: "Value"} để đổi key của object
   + console.table(tabledata, tablecolumns): tabledata bắt buộc, tablecollum hiển thị cột
   + console.time(label) & console.timeEnd(label): do thời gian trong console label là tên biến thời gian
+  + đẻ npm song song {
+  "start": "concurrently \"command1 arg\" \"command2 arg\""
+  + https://medium.com/@bretcameron/13-npm-tricks-for-faster-javascript-development-4fe2a83f87a2
+}
+  + để trỏ vào folder để chạy npm: npm start --prefix path/to/your/folder
  * https://medium.com/javascript-in-plain-english/common-javascript-algorithms-you-must-know-9ca569ddf46f
+ * https://codelearn.io/sharing/tong-hop-javascript-code-snippets-ma-coder-can-biet
+ * https://medium.com/javascript-in-plain-english/12-more-new-super-useful-tricks-in-javascript-497062e67e08
+ * https://medium.com/javascript-in-plain-english/12-super-useful-tricks-in-javascript-65c0595d309b
+ * https://medium.com/javascript-in-plain-english/25-javascript-code-solutions-utility-tricks-you-need-to-know-about-3023f7ed993e
  */
 
 /**
@@ -95,6 +104,7 @@ const scrollToTop = () => {
 };
 
 // Check if the elements specified is visible in the viewport
+//4. Kiểm tra xem phần tử có nằm trong viewport hay không.
 const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
   const { top, left, bottom, right } = el.getBoundingClientRect();
   const { innerHeight, innerWidth } = window;
@@ -127,6 +137,7 @@ const detectDeviceType = () =>
         : "Desktop";
 
 // Get URL Params
+//6. Trích xuất các parameters của URL
 const getURLParameters = (url) =>
     [...new URL(url).searchParams].reduce(
         (obj, [key, value]) => (
@@ -148,10 +159,12 @@ const formToObject = (form) =>
 formToObject(document.querySelector("#form")); // { email: 'test@email.com', name: 'Test Name' }
 
 // Remove event listener from an element
+//8. Xóa event listener của 1 phần tử
 const offEventListener = (element, event, func, opts = false) =>
     element.removeEventListener(event, func, opts);
 
 // Format the given number of milliseconds
+//9. Format lại thời gian với giá trị truyền vào là milliseconds
 const formatTime = (ms) => {
   if (ms < 0) ms = -ms;
   const time = {

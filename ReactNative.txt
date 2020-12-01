@@ -1,3 +1,114 @@
+https://oblador.github.io/react-native-vector-icons/
+{
+"alignContent",
+  "alignItems",
+  "alignSelf",
+  "aspectRatio",
+  "backfaceVisibility",
+  "backgroundColor",
+  "borderBottomColor",
+  "borderBottomEndRadius",
+  "borderBottomLeftRadius",
+  "borderBottomRightRadius",
+  "borderBottomStartRadius",
+  "borderBottomWidth",
+  "borderColor",
+  "borderEndColor",
+  "borderEndWidth",
+  "borderLeftColor",
+  "borderLeftWidth",
+  "borderRadius",
+  "borderRightColor",
+  "borderRightWidth",
+  "borderStartColor",
+  "borderStartWidth",
+  "borderStyle",
+  "borderTopColor",
+  "borderTopEndRadius",
+  "borderTopLeftRadius",
+  "borderTopRightRadius",
+  "borderTopStartRadius",
+  "borderTopWidth",
+  "borderWidth",
+  "bottom",
+  "color",
+  "decomposedMatrix",
+  "direction",
+  "display",
+  "elevation",
+  "end",
+  "flex",
+  "flexBasis",
+  "flexDirection",
+  "flexGrow",
+  "flexShrink",
+  "flexWrap",
+  "fontFamily",
+  "fontSize",
+  "fontStyle",
+  "fontVariant",
+  "fontWeight",
+  "height",
+  "includeFontPadding",
+  "justifyContent",
+  "left",
+  "letterSpacing",
+  "lineHeight",
+  "margin",
+  "marginBottom",
+  "marginEnd",
+  "marginHorizontal",
+  "marginLeft",
+  "marginRight",
+  "marginStart",
+  "marginTop",
+  "marginVertical",
+  "maxHeight",
+  "maxWidth",
+  "minHeight",
+  "minWidth",
+  "opacity",
+  "overflow",
+  "overlayColor",
+  "padding",
+  "paddingBottom",
+  "paddingEnd",
+  "paddingHorizontal",
+  "paddingLeft",
+  "paddingRight",
+  "paddingStart",
+  "paddingTop",
+  "paddingVertical",
+  "position",
+  "resizeMode",
+  "right",
+  "rotation",
+  "scaleX",
+  "scaleY",
+  "shadowColor",
+  "shadowOffset",
+  "shadowOpacity",
+  "shadowRadius",
+  "start",
+  "textAlign",
+  "textAlignVertical",
+  "textDecorationColor",
+  "textDecorationLine",
+  "textDecorationStyle",
+  "textShadowColor",
+  "textShadowOffset",
+  "textShadowRadius",
+  "textTransform",
+  "tintColor",
+  "top",
+  "transform",
+  "transformMatrix",
+  "translateX",
+  "translateY",
+  "width",
+  "writingDirection",
+  "zIndex"
+}
 Basic ReactNative
 ===========================================
 các packgage base:
@@ -11,6 +122,7 @@ các packgage base:
 - https://daveceddia.com/deploy-react-express-app-heroku/?fbclid=IwAR3SGUuPdl1yxFb2TDC3Gps5lBsE8Jp2XBEycHMemWRtfHv4o1vAQxw07CQ
 npm i --save react-navigation-drawer react-native-safe-area-context react-navigation-stack react-navigation-tabs react-navigation-header-buttons react-native-screens react-navigation-material-bottom-tabs react-native-paper react-navigation react-native-reanimated react-native-ionicons
 - react-native start --reset-cache
+- npm react-devtools --save-dev
 
 ===========================================
 các thuộc tính lạ của react-native:
@@ -89,4 +201,30 @@ Xoay màn hình:
 		  headerTintColor: 'white'
 		}
 	- mOdule 6 video 17
-	
+======================================================
+REDUX
+- npm i --save redux react-redux
+- tạo file store (actions, reducers)
+	+ reducers: trả ra state
+	+ actions: define actions (type, ...params)
+- define store in apps
+- ở component khai báo useSelector of react-redux
+
+useEffect(() => {
+  // almost same as componentDidMount
+  console.log('mounted!');
+  return () => {
+    // almost same as componentWillUnmount
+    console.log('unmount!');
+  };
+}, []);
+useEffect(function, []) <=> didmount
+
+useReducer
+const [state, dispatch] = useReducer(reducer, initialState)
+
+useMemo
+useMemo giúp ta kiểm soát việc được render dư thừa của các component con, nó khá giống với hàm shouldComponentUpdate trong LifeCycle. Bằng cách truyền vào 1 tham số thứ 2 thì chỉ khi tham số này thay đổi thì thằng useMemo mới được thực thi
+
+useCallback
+useCallback có nhiệm vụ tương tự như useMemo nhưng khác ở chỗ function truyền vào useMemo bắt buộc phải ở trong quá trình render trong khi đối với useCallback đó lại là function callback của 1 event nào đó như là onClick chẳng hạn
