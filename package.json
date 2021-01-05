@@ -5,7 +5,7 @@
   },
   "dependencies": {
     "aws-sdk": "^2.713.0",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "dynamodb-item-size": "0.0.1",
     "dyno-item-size": "^0.3.3",
     "express": "^4.17.1",
