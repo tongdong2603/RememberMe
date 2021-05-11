@@ -9,7 +9,7 @@
     "dynamodb-item-size": "0.0.1",
     "dyno-item-size": "^0.3.3",
     "express": "^4.17.1",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.26",
     "request": "^2.88.0",
