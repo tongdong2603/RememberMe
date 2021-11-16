@@ -4,7 +4,7 @@
     "debbuger": "node test.js"
   },
   "dependencies": {
-    "aws-sdk": "^2.713.0",
+    "aws-sdk": "^2.814.0",
     "axios": "^0.19.0",
     "dynamodb-item-size": "0.0.1",
     "dyno-item-size": "^0.3.3",
