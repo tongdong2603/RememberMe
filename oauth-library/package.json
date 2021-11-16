@@ -14,7 +14,7 @@
   "dependencies": {
     "@microsoft/microsoft-graph-client": "^1.5.2",
     "async": "latest",
-    "aws-sdk": "^2.471.0",
+    "aws-sdk": "^2.814.0",
     "basic-auth-connect": "latest",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "~1.13.2",
