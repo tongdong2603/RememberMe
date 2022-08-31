@@ -32,7 +32,7 @@
     "http-errors": "~1.6.2",
     "http-proxy": "latest",
     "jsonwebtoken": "^8.5.1",
-    "moment-timezone": "^0.5.25",
+    "moment-timezone": "^0.5.35",
     "multer": "latest",
     "node-constants": "latest",
     "nodemailer": "^2.4.1",
